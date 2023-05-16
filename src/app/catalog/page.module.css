@@ -1,0 +1,23 @@
+.tableBorder {
+  border: 1px solid var(--color-default-light);
+}
+
+.table {
+  border-collapse: collapse;
+  composes: tableBorder;
+  width: 100%;
+}
+
+.cell {
+  composes: tableBorder;
+  padding: 2px 4px;
+}
+
+.th {
+  composes: cell;
+  text-align-last: left;
+}
+
+.td {
+  composes: cell;
+}
