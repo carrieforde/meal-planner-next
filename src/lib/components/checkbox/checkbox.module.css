@@ -1,0 +1,25 @@
+.checkbox {
+  align-items: center;
+  display: flex;
+  gap: var(--base-spacing);
+}
+
+.input {
+  appearance: none;
+  background-color: transparent;
+
+  /* background-image: url("check-solid.svg"); */
+  border: 1px solid;
+  border-color: var(--color-default-400);
+  border-radius: var(--border-radius);
+  display: block;
+  height: 16px;
+  margin: 0;
+  transition: background-color 0.1s ease-in, border-color 0.1s ease-in;
+  width: 16px;
+}
+
+.checked {
+  background-color: var(--color-primary-main);
+  border-color: var(--color-primary-main);
+}

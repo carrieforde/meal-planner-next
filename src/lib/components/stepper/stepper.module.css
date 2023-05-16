@@ -1,0 +1,15 @@
+.stepper {
+  max-width: 100%;
+  padding: 24px;
+  width: 560px;
+}
+
+.stepper li + li {
+  margin-top: 48px;
+}
+
+.navigation {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+}

@@ -1,0 +1,20 @@
+import { ArgTypes, Canvas, Meta, Controls } from "@storybook/addon-docs";
+import * as BannerStories from "./banner.stories";
+
+import Banner from "./banner";
+
+<Meta of={BannerStories} />
+
+# Banner
+
+Use the controls below to customize the `Banner`.
+
+<Canvas of={BannerStories.Playground} />
+
+## Props
+
+<Controls of={BannerStories.Playground} />
+
+## API
+
+<ArgTypes of={BannerStories} />

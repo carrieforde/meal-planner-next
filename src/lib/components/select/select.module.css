@@ -1,0 +1,19 @@
+.select {
+  --chevron-down-fill: var(--color-default-dark);
+
+  appearance: none;
+
+  /* background: url("chevron-down.svg") no-repeat 95% center; */
+  background-size: 14px;
+  border: 1px solid var(--color-default-400);
+  border-radius: var(--border-radius);
+  color: var(--heading-color);
+  display: grid;
+  font-size: var(--base-font-size);
+  padding: var(--base-spacing);
+  width: 100%;
+}
+
+.error {
+  border-color: var(--color-error-main);
+}

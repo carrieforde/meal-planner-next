@@ -1,0 +1,61 @@
+.body {
+  overflow: hidden;
+}
+
+.body::after {
+  background-color: rgb(16 42 67 / 45%);
+  content: "";
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 0;
+}
+
+.closeButton {
+  padding: 0;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
+
+.dialog {
+  background-color: var(--body-bg-color);
+  height: 100vh;
+  left: 0;
+  max-width: 100%;
+  padding: 24px;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 3;
+}
+
+@media screen and (width >= 600px) {
+  .dialog {
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 10px 1px rgb(0 0 0 / 20%);
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+  }
+}
+
+.title {
+  margin-top: 0;
+}
+
+.content {
+  margin-top: 24px;
+}
+
+.isLoading {
+  text-align: center;
+}
+
+.actions {
+  margin-top: 24px;
+}

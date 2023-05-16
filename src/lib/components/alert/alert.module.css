@@ -1,0 +1,16 @@
+.alert {
+  background-color: var(--color-error-main);
+  border-radius: var(--border-radius);
+  color: var(--color-error-contrast);
+  column-gap: 4px;
+  display: flex;
+  font-size: 14px;
+  left: 50%;
+  max-width: 100%;
+  min-width: 300px;
+  padding: 16px;
+  position: fixed;
+  top: 32px;
+  transform: translateX(-50%);
+  width: fit-content;
+}

@@ -1,0 +1,29 @@
+.spinner svg {
+  animation: 1s linear infinite spin;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.medium {
+  --icon-size: 24px;
+}
+
+.large {
+  --icon-size: 36px;
+}
+
+.primary {
+  --icon-fill: var(--color-primary-main);
+}
+
+.secondary {
+  --icon-fill: var(--color-secondary-main);
+}
