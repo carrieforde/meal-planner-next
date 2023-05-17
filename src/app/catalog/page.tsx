@@ -5,7 +5,9 @@ import {
 } from "utilities/types/shopping";
 
 import { Units, unitMap } from "utilities/types/units";
+import { getClient } from "lib/graphql/apollo";
 import s from "./page.module.css";
+import { GET_CATALOG } from "./gql";
 
 interface CatalogItem {
   defaultUnit: Units | null;
@@ -23,7 +25,8 @@ async function getCatalog() {
 }
 
 export default async function CatalogPage() {
-  const request = await getCatalog();
+  // const request = await getCatalog();
+  const { data } = await getClient().query({ query: GET_CATALOG });
 
   return (
     <table className={s.table}>
@@ -35,18 +38,16 @@ export default async function CatalogPage() {
       </thead>
 
       <tbody>
-        {(request as Array<CatalogItem & { id: string }>).map(
-          ({ id, name, category, defaultUnit }) => (
-            <tr key={id}>
-              <td className={s.td}>Add</td>
-              <td className={s.td}>{name}</td>
-              <td className={s.td}>{shoppingCategoriesMap[category]}</td>
-              <td className={s.td}>
-                {defaultUnit ? unitMap[defaultUnit] : ""}
-              </td>
-            </tr>
-          )
-        )}
+        {(
+          data as unknown as { catalog: Array<CatalogItem & { id: string }> }
+        ).catalog.map(({ id, name, category, defaultUnit }) => (
+          <tr key={id}>
+            <td className={s.td}>Add</td>
+            <td className={s.td}>{name}</td>
+            <td className={s.td}>{shoppingCategoriesMap[category]}</td>
+            <td className={s.td}>{defaultUnit ? unitMap[defaultUnit] : ""}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
