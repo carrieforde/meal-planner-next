@@ -11,7 +11,9 @@ export default meta;
 type Story = StoryObj<typeof Alert>;
 
 export const Primary: Story = {
-  render: ({ icon }) => <Alert icon={icon}>This is an alert</Alert>,
+  args: {
+    children: "This is an alert",
+  },
 };
 
 export const Icon: Story = {
