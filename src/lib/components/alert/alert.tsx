@@ -5,16 +5,12 @@ import cn from "classnames";
 import { Text } from "../text/text";
 import s from "./alert.module.css";
 
-type AlertProps = {
+export type AlertProps = React.PropsWithChildren<{
   icon?: React.ReactNode;
   variant?: "error" | "info" | "warning" | "success";
-};
+}>;
 
-export const Alert: React.FC<React.PropsWithChildren<AlertProps>> = ({
-  variant,
-  children,
-  icon,
-}) => {
+export const Alert: React.FC<AlertProps> = ({ variant, children, icon }) => {
   const alertClasses = cn(s.alert, variant && [s[variant]], "alert");
 
   return createPortal(
