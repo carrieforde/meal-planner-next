@@ -6,6 +6,7 @@
   --body2-margin-bottom: 0;
   --body2-font-weight: 400;
 
+  align-items: center;
   background-color: var(--alert-bg-color);
   border-radius: var(--border-radius);
   column-gap: 4px;
