@@ -18,8 +18,6 @@ interface CatalogItem {
 export default async function CatalogPage() {
   const { data } = await getClient().query({ query: GET_CATALOG });
 
-  console.log(data);
-
   return (
     <table className={s.table}>
       <thead>

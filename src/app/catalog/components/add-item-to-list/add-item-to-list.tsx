@@ -14,7 +14,6 @@ import {
   useForm,
   useOpenClose,
 } from "lib";
-import { noop } from "lodash";
 import { useRef } from "react";
 import { Units, unitMap } from "utilities/types/units";
 

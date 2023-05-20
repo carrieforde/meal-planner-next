@@ -21,8 +21,7 @@
   font-weight: var(--button-font-weight, 600);
   justify-content: center;
   min-width: 100px;
-  padding: var(--button-padding, 8px 16px);
-  padding: 8px 12px;
+  padding: var(--button-padding, 8px 12px);
   transition: background-color 0.2s ease-in, color 0.2s ease-in;
 }
 

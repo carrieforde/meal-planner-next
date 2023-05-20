@@ -1,0 +1,16 @@
+.checkIcon {
+  --icon-fill: var(--text-color);
+}
+
+.check {
+  --button-padding: 4px;
+
+  height: 20px;
+  width: 20px;
+}
+
+.checked {
+  --icon-fill: #fff;
+
+  background-color: var(--color-success-dark) !important;
+}
