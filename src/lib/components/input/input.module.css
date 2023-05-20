@@ -9,5 +9,11 @@
 }
 
 .error {
-  border-color: var(--color-error-main);
+  border-color: var(--form-error-color);
+}
+
+.disabled {
+  border-color: var(--form-disabled-border-color, var(--color-default-100));
+  color: var(--form-disabled-color);
+  cursor: not-allowed;
 }

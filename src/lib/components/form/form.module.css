@@ -1,4 +1,8 @@
 .form {
+  --form-error-color: var(--color-error-main);
+  --form-disabled-border-color: var(--color-default-200);
+  --form-disabled-color: var(--color-default-400);
+
   max-width: 100%;
   width: 560px;
 }
