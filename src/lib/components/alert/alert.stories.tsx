@@ -3,7 +3,7 @@ import { Button } from "../button/button";
 import { AlertProps, AlertProvider, useAlert } from "./alert";
 
 const meta: Meta<AlertProps> = {
-  title: "Alert",
+  title: "Status/Alert",
 };
 
 export default meta;

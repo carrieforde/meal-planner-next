@@ -6,7 +6,7 @@ import * as React from "react";
 import { Dialog } from "./dialog";
 
 const meta: Meta<typeof Dialog> = {
-  title: "Dialog",
+  title: "Surfaces/Dialog",
   component: Dialog,
 };
 

@@ -6,7 +6,7 @@ import { Button } from "lib/components/button/button";
 import { Drawer } from "./drawer";
 
 const meta: Meta<typeof Drawer> = {
-  title: "Drawer",
+  title: "Surfaces/Drawer",
   component: Drawer,
 } as Meta;
 
