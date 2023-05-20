@@ -1,13 +1,13 @@
-import { firestore } from "firestore/firestore";
 import {
   ShoppingCategories,
   shoppingCategoriesMap,
 } from "utilities/types/shopping";
 
+import { getClient } from "lib/graphql/client";
 import { Units, unitMap } from "utilities/types/units";
-import { getClient } from "lib/graphql/apollo";
-import s from "./page.module.css";
+import AddToList from "./components/add-item-to-list/add-item-to-list";
 import { GET_CATALOG } from "./gql";
+import s from "./page.module.css";
 
 interface CatalogItem {
   defaultUnit: Units | null;
@@ -15,18 +15,10 @@ interface CatalogItem {
   category: ShoppingCategories;
 }
 
-async function getCatalog() {
-  const collection = await firestore
-    .collection("catalog")
-    .orderBy("category", "asc")
-    .get();
-
-  return collection.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-}
-
 export default async function CatalogPage() {
-  // const request = await getCatalog();
   const { data } = await getClient().query({ query: GET_CATALOG });
+
+  console.log(data);
 
   return (
     <table className={s.table}>
@@ -42,7 +34,11 @@ export default async function CatalogPage() {
           data as unknown as { catalog: Array<CatalogItem & { id: string }> }
         ).catalog.map(({ id, name, category, defaultUnit }) => (
           <tr key={id}>
-            <td className={s.td}>Add</td>
+            <td className={s.td}>
+              {/* Consider disabling button if item is already on list */}
+              {/* A tooltip could be used to indicate item is on list. */}
+              <AddToList itemId={id} name={name} unit={defaultUnit} />
+            </td>
             <td className={s.td}>{name}</td>
             <td className={s.td}>{shoppingCategoriesMap[category]}</td>
             <td className={s.td}>{defaultUnit ? unitMap[defaultUnit] : ""}</td>

@@ -10,7 +10,7 @@ export type FormConfig<
   initialValues: TValues;
   onSubmit: (values: TValues) => Promise<void>;
   onReset?: () => void;
-  validators: Partial<Record<TKey, any>>;
+  validators?: Partial<Record<TKey, any>>;
 };
 
 export const useForm = <TValues extends FormValues = FormValues>({
@@ -133,11 +133,13 @@ export const useForm = <TValues extends FormValues = FormValues>({
         e.preventDefault();
 
         // We need to check for errors before submitting!
-        Object.keys(validators).forEach((key) => {
-          if (validators?.[key]?.(values[key])) {
-            setErrors((prevValue) => ({ ...prevValue, [key]: true }));
-          }
-        });
+        if (validators) {
+          Object.keys(validators).forEach((key) => {
+            if (validators?.[key]?.(values[key])) {
+              setErrors((prevValue) => ({ ...prevValue, [key]: true }));
+            }
+          });
+        }
 
         if (Object.values(errors).some((value) => value === true)) {
           setFormError("There are errors that need to be addressed!");

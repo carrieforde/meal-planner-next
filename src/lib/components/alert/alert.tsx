@@ -92,7 +92,7 @@ export const AlertProvider: React.FC<React.PropsWithChildren> = ({
   );
 };
 
-const DEFAULT_DURATION_IN_MS = 3000;
+const DEFAULT_DURATION_IN_MS = 5000;
 
 type AlertOptions = Pick<AlertProps, "icon"> & {
   duration?: number;

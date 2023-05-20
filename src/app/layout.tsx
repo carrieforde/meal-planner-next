@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-page-custom-font */
+import { ApolloWrapper } from "lib/graphql/apollo-wrapper";
 import "./styles.css";
+import { AlertProvider } from "lib";
 
 export const metadata = {
   title: "Create Next App",
@@ -21,7 +23,11 @@ export default function RootLayout({
         />
       </head>
 
-      <body>{children}</body>
+      <body>
+        <ApolloWrapper>
+          <AlertProvider>{children}</AlertProvider>
+        </ApolloWrapper>
+      </body>
     </html>
   );
 }

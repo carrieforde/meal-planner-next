@@ -7,9 +7,11 @@ export type FormProps = React.PropsWithChildren<{
   onReset?: () => void;
 }>;
 
+type FormFieldsProps = React.PropsWithChildren;
 type FormActionsProps = React.PropsWithChildren;
 
 interface FormComposition {
+  Fields: React.FC<FormFieldsProps>;
   Actions: React.FC<FormActionsProps>;
 }
 
@@ -31,10 +33,15 @@ export const Form: React.FC<FormProps> & FormComposition = ({
   );
 };
 
+const Fields: React.FC<FormFieldsProps> = ({ children }) => (
+  <div className={s.fields}>{children}</div>
+);
+
 const Actions: React.FC<FormActionsProps> = ({ children }) => (
   <div className={s.actions}>{children}</div>
 );
 
 export default Form;
 
+Form.Fields = Fields;
 Form.Actions = Actions;

@@ -6,7 +6,7 @@ export const { getClient } = registerApolloClient(
     new ApolloClient({
       cache: new InMemoryCache(),
       link: new HttpLink({
-        uri: "https://us-central1-meal-planner-355001.cloudfunctions.net/list-ingredients",
+        uri: process.env.APOLLO_URI,
       }),
     })
 );

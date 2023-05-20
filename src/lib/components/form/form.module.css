@@ -1,10 +1,12 @@
 .form {
+  max-width: 100%;
+  width: 560px;
+}
+
+.fields {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  max-width: 100%;
-  padding: 24px;
-  width: 560px;
 }
 
 .actions {
